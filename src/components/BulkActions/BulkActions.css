@@ -1,0 +1,85 @@
+/* BulkActions Styles */
+
+.bulk-actions {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.bulk-actions__info {
+  font-weight: var(--font-bold);
+  white-space: nowrap;
+}
+
+.bulk-actions__controls {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.bulk-actions__select {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  padding: var(--spacing-md) var(--spacing-lg) !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+.bulk-actions__select option {
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+}
+
+.bulk-actions__select:focus {
+  outline: none !important;
+  border-color: white !important;
+  box-shadow: 0 0 0 2px var(--color-primary) !important;
+}
+
+.bulk-actions .btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.bulk-actions .btn--danger {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.bulk-actions .btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .bulk-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bulk-actions__controls {
+    flex-direction: column;
+  }
+
+  .bulk-actions__controls .btn {
+    width: 100%;
+  }
+}
