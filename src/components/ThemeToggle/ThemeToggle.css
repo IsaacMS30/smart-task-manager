@@ -1,0 +1,28 @@
+/* ThemeToggle Styles */
+
+.theme-toggle {
+  background-color: transparent;
+  border: 1px solid var(--theme-border);
+  color: var(--theme-text);
+  cursor: pointer;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  background-color: var(--theme-bg-secondary);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
