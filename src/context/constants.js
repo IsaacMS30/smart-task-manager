@@ -1,0 +1,59 @@
+// Project Actions
+export const PROJECT_ACTIONS = {
+  ADD_PROJECT: 'ADD_PROJECT',
+  UPDATE_PROJECT: 'UPDATE_PROJECT',
+  DELETE_PROJECT: 'DELETE_PROJECT',
+  SET_PROJECTS: 'SET_PROJECTS',
+};
+
+// Task Actions
+export const TASK_ACTIONS = {
+  ADD_TASK: 'ADD_TASK',
+  UPDATE_TASK: 'UPDATE_TASK',
+  DELETE_TASK: 'DELETE_TASK',
+  SET_TASKS: 'SET_TASKS',
+  BULK_DELETE_TASKS: 'BULK_DELETE_TASKS',
+  BULK_UPDATE_TASKS: 'BULK_UPDATE_TASKS',
+};
+
+// Theme Actions
+export const THEME_ACTIONS = {
+  SET_THEME: 'SET_THEME',
+};
+
+// History Actions (Undo/Redo)
+export const HISTORY_ACTIONS = {
+  PUSH_HISTORY: 'PUSH_HISTORY',
+  UNDO: 'UNDO',
+  REDO: 'REDO',
+  CLEAR_HISTORY: 'CLEAR_HISTORY',
+};
+
+// UI/Filter Actions
+export const FILTER_ACTIONS = {
+  SET_SEARCH: 'SET_SEARCH',
+  SET_STATUS_FILTER: 'SET_STATUS_FILTER',
+  SET_PRIORITY_FILTER: 'SET_PRIORITY_FILTER',
+  SET_TAG_FILTER: 'SET_TAG_FILTER',
+  RESET_FILTERS: 'RESET_FILTERS',
+};
+
+// Task Status
+export const TASK_STATUS = {
+  TODO: 'To Do',
+  IN_PROGRESS: 'In Progress',
+  DONE: 'Done',
+};
+
+// Task Priority
+export const TASK_PRIORITY = {
+  LOW: 'Low',
+  MEDIUM: 'Medium',
+  HIGH: 'High',
+};
+
+// Themes
+export const THEMES = {
+  LIGHT: 'light',
+  DARK: 'dark',
+};
