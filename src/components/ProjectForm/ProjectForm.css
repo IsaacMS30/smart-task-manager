@@ -1,0 +1,72 @@
+/* Form Styles */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.form__label {
+  font-weight: var(--font-medium);
+  color: var(--theme-text);
+  font-size: var(--font-sm);
+}
+
+.form__input,
+.form__textarea,
+.form__select {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  font-size: var(--font-md);
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.form__input:focus,
+.form__textarea:focus,
+.form__select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form__actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .form__actions {
+    flex-direction: column-reverse;
+  }
+
+  .form__actions .btn {
+    width: 100%;
+  }
+}
