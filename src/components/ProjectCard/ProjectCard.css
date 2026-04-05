@@ -1,0 +1,74 @@
+/* ProjectCard Styles */
+
+.project-card {
+  background-color: var(--theme-bg);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+}
+
+.project-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+.project-card__title {
+  font-size: var(--font-lg);
+  margin: 0;
+  color: var(--theme-text);
+}
+
+.project-card__task-count {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+}
+
+.project-card__description {
+  color: var(--theme-text-secondary);
+  font-size: var(--font-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-grow: 1;
+}
+
+.project-card__footer {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.project-card__footer .btn {
+  flex: 1;
+  min-width: 120px;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    padding: var(--spacing-md);
+  }
+
+  .project-card__footer {
+    flex-direction: column;
+  }
+
+  .project-card__footer .btn {
+    min-width: auto;
+  }
+}
