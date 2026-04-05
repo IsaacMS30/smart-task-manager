@@ -7,12 +7,7 @@ import React from 'react';
 import { TASK_STATUS, TASK_PRIORITY } from '../../context/constants';
 import './FilterBar.css';
 
-function FilterBar ({
-  filters,
-  onFilterChange,
-  onReset,
-  allTags,
-}) {
+function FilterBar ({ filters, onFilterChange, onReset, allTags}) {
   const handleStatusChange = (status) => {
     const newStatuses = filters.status?.includes(status)
       ? filters.status.filter((s) => s !== status)

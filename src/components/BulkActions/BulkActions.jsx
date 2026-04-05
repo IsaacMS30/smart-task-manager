@@ -7,13 +7,7 @@ import React from 'react';
 import { TASK_STATUS, TASK_PRIORITY } from '../../context/constants';
 import './BulkActions.css';
 
-function BulkActions({
-  selectedCount,
-  onBulkDelete,
-  onBulkStatusChange,
-  onBulkPriorityChange,
-  onClearSelection,
-}) {
+function BulkActions({ selectedCount, onBulkDelete, onBulkStatusChange, onBulkPriorityChange, onClearSelection}) {
   if (selectedCount === 0) return null;
 
   return (
