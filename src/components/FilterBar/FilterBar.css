@@ -1,0 +1,54 @@
+/* FilterBar Styles */
+
+.filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  background-color: var(--theme-bg-secondary);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.filter-bar__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.filter-bar__title {
+  font-size: var(--font-md);
+  font-weight: var(--font-bold);
+  color: var(--theme-text);
+  margin: 0;
+}
+
+.filter-bar__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.filter-bar__checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  user-select: none;
+  color: var(--theme-text);
+  transition: var(--transition);
+}
+
+.filter-bar__checkbox:hover {
+  color: var(--color-primary);
+}
+
+.filter-bar__checkbox input {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.filter-bar__checkbox span {
+  font-size: var(--font-sm);
+}
