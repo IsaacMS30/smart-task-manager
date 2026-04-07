@@ -1,0 +1,169 @@
+/* Dashboard Page Styles */
+
+.dashboard {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.dashboard__header {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.dashboard__header h1 {
+  margin-bottom: var(--spacing-md);
+}
+
+.dashboard__subtitle {
+  font-size: var(--font-lg);
+  color: var(--theme-text-secondary);
+  margin: 0;
+}
+
+/* Statistics Cards */
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.stat-card {
+  background-color: var(--theme-bg-secondary);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+}
+
+.stat-card__number {
+  font-size: var(--font-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.stat-card__label {
+  font-size: var(--font-sm);
+  color: var(--theme-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Progress Section */
+.dashboard__progress {
+  background-color: var(--theme-bg-secondary);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.dashboard__progress h2 {
+  margin-top: 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 24px;
+  background-color: var(--theme-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+  border: 1px solid var(--theme-border);
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), #2980b9);
+  transition: var(--transition);
+}
+
+.progress-bar__text {
+  text-align: center;
+  font-weight: var(--font-bold);
+  color: var(--theme-text);
+  margin: 0;
+}
+
+/* Projects Section */
+.dashboard__projects {
+  background-color: var(--theme-bg-secondary);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.dashboard__projects h2 {
+  margin-top: 0;
+}
+
+.dashboard__empty {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--theme-text-secondary);
+}
+
+.dashboard__project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard__project-item {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--theme-border);
+  transition: var(--transition);
+}
+
+.dashboard__project-item:last-child {
+  border-bottom: none;
+}
+
+.dashboard__project-item:hover {
+  background-color: var(--theme-bg);
+  border-radius: var(--radius-lg);
+}
+
+.dashboard__project-link {
+  color: var(--color-primary);
+  font-weight: var(--font-medium);
+  transition: var(--transition);
+}
+
+.dashboard__project-link:hover {
+  text-decoration: underline;
+  color: #2980b9;
+}
+
+/* Actions Section */
+.dashboard__actions {
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .dashboard__stats {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .stat-card {
+    padding: var(--spacing-md);
+  }
+
+  .stat-card__number {
+    font-size: var(--font-xl);
+  }
+
+  .stat-card__label {
+    font-size: var(--font-xs);
+  }
+}
