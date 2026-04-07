@@ -5,13 +5,16 @@
 
 import React, { useState, useCallback } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { useProjects, useTasks, useFilteredTasks, useAllTags } from '../../hooks/useApp';
-import TaskCard from '../../components/TaskCard';
-import TaskForm from '../../components/TaskForm';
-import SearchBar from '../../components/SearchBar';
-import FilterBar from '../../components/FilterBar';
-import BulkActions from '../../components/BulkActions';
-import Modal from '../../components/Modal';
+import useProjects from '../../hooks/useProjects';
+import useTasks from '../../hooks/useTasks';
+import useFilteredTasks from '../../hooks/useFilteredTasks';
+import useAllTags from '../../hooks/useAllTags';
+import TaskCard from '../../components/TaskCard/TaskCard';
+import TaskForm from '../../components/TaskForm/TaskForm';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import FilterBar from '../../components/FilterBar/FilterBar';
+import BulkActions from '../../components/BulkActions/BulkActions';
+import Modal from '../../components/Modal/Modal';
 import './Tasks.css';
 
 function Tasks() {

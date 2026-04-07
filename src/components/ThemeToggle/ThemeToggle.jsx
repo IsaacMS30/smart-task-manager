@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect } from 'react';
-import { useTheme } from '../../hooks/useApp';
+import useTheme from '../../hooks/useTheme';
 import './ThemeToggle.css';
 
 function ThemeToggle() {

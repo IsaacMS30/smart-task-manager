@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
-import { useTasks } from './useTasks';
+import useTasks from './useTasks';
 
 /**
  * Hook for getting all unique tags
  */
-export function useAllTags() {
+function useAllTags() {
   const { tasks } = useTasks();
 
   return useMemo(() => {
@@ -15,3 +15,5 @@ export function useAllTags() {
     return Array.from(tagSet);
   }, [tasks]);
 };
+
+export default useAllTags;

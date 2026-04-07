@@ -1,9 +1,9 @@
-import { useApp } from '../context/AppContext';
+import useApp from './useApp';
 
 /**
  * Hook for theme operations
  */
-export function useTheme() {
+function useTheme() {
   const { state, setTheme } = useApp();
   
   return {
@@ -12,3 +12,5 @@ export function useTheme() {
     isDark: state.theme === 'dark',
   };
 };
+
+export default useTheme;

@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
-import { useTasks } from './useTasks';
-import { useProjects } from './useProjects';
+import useTasks from './useTasks';
+import useProjects from './useProjects';
 
 /**
  * Hook for dashboard statistics
  */
-export function useDashboardStats() {
+function useDashboardStats() {
   const { tasks } = useTasks();
   const { projects } = useProjects();
 
@@ -31,3 +31,5 @@ export function useDashboardStats() {
     };
   }, [tasks, projects]);
 };
+
+export default useDashboardStats;

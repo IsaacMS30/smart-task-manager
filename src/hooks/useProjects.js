@@ -1,9 +1,9 @@
-import { useApp } from './useApp';
+import useApp from './useApp';
 
 /**
  * Hook for project operations
  */
-export function useProjects() {
+function useProjects() {
   const { state, addProject, updateProject, deleteProject } = useApp();
   return {
     projects: state.projects,
@@ -12,3 +12,5 @@ export function useProjects() {
     deleteProject,
   };
 };
+
+export default useProjects;

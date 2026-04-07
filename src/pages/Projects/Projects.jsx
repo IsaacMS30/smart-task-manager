@@ -5,10 +5,11 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useProjects, useTasks } from '../../hooks/useApp';
-import ProjectCard from '../../components/ProjectCard';
-import ProjectForm from '../../components/ProjectForm';
-import Modal from '../../components/Modal';
+import  useProjects from '../../hooks/useProjects';
+import useTasks from '../../hooks/useTasks';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import ProjectForm from '../../components/ProjectForm/ProjectForm';
+import Modal from '../../components/Modal/Modal';
 import './Projects.css';
 
 function Projects() {

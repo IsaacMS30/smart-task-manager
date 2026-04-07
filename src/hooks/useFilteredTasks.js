@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
-import { useTasks } from './useTasks';
+import useTasks from './useTasks';
 
 /**
  * Hook for filtering and searching tasks
  */
-export function useFilteredTasks(projectId, filters = {}) {
+function useFilteredTasks(projectId, filters = {}) {
   const { tasks } = useTasks();
   
   return useMemo(() => {
@@ -42,3 +42,5 @@ export function useFilteredTasks(projectId, filters = {}) {
     return filtered;
   }, [tasks, projectId, filters]);
 };
+
+export default useFilteredTasks;

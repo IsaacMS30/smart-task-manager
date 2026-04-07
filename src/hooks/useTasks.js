@@ -1,9 +1,9 @@
-import { useApp } from './useApp';
+import useApp from './useApp';
 
 /**
  * Hook for tasks operations
  */
-export function useTasks() {
+function useTasks() {
   const { state, addTask, updateTask, deleteTask, bulkDeleteTasks, bulkUpdateTasks } = useApp();
   return {
     tasks: state.tasks,
@@ -14,3 +14,5 @@ export function useTasks() {
     bulkUpdateTasks,
   };
 };
+
+export default useTasks;

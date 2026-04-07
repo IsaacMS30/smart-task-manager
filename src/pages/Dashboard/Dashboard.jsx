@@ -5,7 +5,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDashboardStats, useProjects } from '../../hooks/useApp';
+import useDashboardStats from '../../hooks/useDashboardStats';
+import useProjects from '../../hooks/useProjects';
 import './Dashboard.css';
 
 function Dashboard() {

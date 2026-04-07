@@ -1,9 +1,9 @@
-import { useApp } from '../context/AppContext';
+import useApp from './useApp';
 
 /**
  * Hook for undo/redo operations
  */
-export function useHistory() {
+function useHistory() {
   const { undo, redo, canUndo, canRedo } = useApp();
   
   return {
@@ -13,3 +13,5 @@ export function useHistory() {
     canRedo: canRedo(),
   };
 };
+
+export default useHistory;

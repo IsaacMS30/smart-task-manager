@@ -5,11 +5,11 @@
 
 import React from 'react';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import Header from '../components/Header';
-import Dashboard from '../pages/Dashboard';
-import Projects from '../pages/Projects';
-import Tasks from '../pages/Tasks';
-import NotFound from '../pages/NotFound';
+import Header from '../components/Header/Header';
+import Dashboard from '../pages/Dashboard/Dashboard';
+import Projects from '../pages/Projects/Projects';
+import Tasks from '../pages/Tasks/Tasks';
+import NotFound from '../pages/NotFound/NotFound';
 import '../styles/Layout.css';
 
 /**
