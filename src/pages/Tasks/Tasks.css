@@ -1,0 +1,141 @@
+/* Tasks Page Styles */
+
+.tasks-page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tasks-page__header {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.tasks-page__breadcrumb {
+  margin-bottom: var(--spacing-lg);
+}
+
+.tasks-page__back-link {
+  color: var(--color-primary);
+  font-weight: var(--font-medium);
+  transition: var(--transition);
+}
+
+.tasks-page__back-link:hover {
+  text-decoration: underline;
+}
+
+.tasks-page__header h1 {
+  margin: var(--spacing-lg) 0;
+}
+
+.tasks-page__description {
+  color: var(--theme-text-secondary);
+  margin: 0;
+}
+
+/* Toolbar */
+.tasks-page__toolbar {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  align-items: center;
+}
+
+.tasks-page__toolbar > div:first-child {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Content Layout */
+.tasks-page__content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.tasks-page__sidebar {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.tasks-page__main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Task List */
+.tasks-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Empty State */
+.tasks-page__empty {
+  background-color: var(--theme-bg-secondary);
+  border: 2px dashed var(--theme-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  text-align: center;
+  color: var(--theme-text-secondary);
+}
+
+.tasks-page__empty p {
+  margin: 0 0 var(--spacing-lg);
+  font-size: var(--font-lg);
+}
+
+.tasks-page__empty .btn {
+  margin-top: var(--spacing-lg);
+}
+
+/* Not Found */
+.tasks-page__not-found {
+  background-color: var(--theme-bg-secondary);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  text-align: center;
+}
+
+.tasks-page__not-found h1 {
+  color: var(--color-danger);
+}
+
+@media (max-width: 1024px) {
+  .tasks-page__content {
+    grid-template-columns: 220px 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .tasks-page__sidebar {
+    top: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tasks-page__toolbar {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .tasks-page__toolbar > div:first-child {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .tasks-page__toolbar .btn {
+    width: 100%;
+  }
+
+  .tasks-page__content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .tasks-page__sidebar {
+    position: relative;
+    top: auto;
+  }
+}
