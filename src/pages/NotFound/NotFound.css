@@ -1,0 +1,40 @@
+/* NotFound Page Styles */
+
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: var(--spacing-xl);
+}
+
+.not-found__content {
+  text-align: center;
+  max-width: 500px;
+}
+
+.not-found__title {
+  font-size: 120px;
+  font-weight: var(--font-bold);
+  color: var(--color-danger);
+  margin: 0;
+  line-height: 1;
+}
+
+.not-found__message {
+  font-size: var(--font-xl);
+  font-weight: var(--font-bold);
+  color: var(--theme-text);
+  margin: var(--spacing-lg) 0;
+}
+
+.not-found__description {
+  color: var(--theme-text-secondary);
+  margin-bottom: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+  .not-found__title {
+    font-size: 80px;
+  }
+}
