@@ -1,0 +1,35 @@
+/* Layout Styles */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--theme-bg);
+}
+
+.layout__main {
+  flex: 1;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.layout__footer {
+  background-color: var(--theme-bg-secondary);
+  border-top: 1px solid var(--theme-border);
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: var(--theme-text-secondary);
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .layout__main {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .layout__footer {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}
