@@ -1,14 +1,23 @@
-import React, { createContext, useReducer, useEffect } from 'react';
-import { rootReducer } from './reducers';
-import { getState, setState, initializeStorage } from '../services/storageService';
-import { PROJECT_ACTIONS, TASK_ACTIONS, THEME_ACTIONS, HISTORY_ACTIONS} from './constants';
+import React, { createContext, useReducer, useEffect } from "react";
+import { rootReducer } from "./reducers";
+import {
+  getState,
+  setState,
+  initializeStorage,
+} from "../services/storageService";
+import {
+  PROJECT_ACTIONS,
+  TASK_ACTIONS,
+  THEME_ACTIONS,
+  HISTORY_ACTIONS,
+} from "./constants";
 
 export const AppContext = createContext();
 
 const initialState = {
   projects: [],
   tasks: [],
-  theme: 'light',
+  theme: "light",
   history: {
     past: [],
     present: null,
@@ -23,7 +32,7 @@ export function AppProvider({ children }) {
   useEffect(() => {
     initializeStorage();
     const savedState = getState();
-    
+
     // Dispatch to set initial state from storage
     if (savedState.projects.length > 0) {
       dispatch({
@@ -37,7 +46,7 @@ export function AppProvider({ children }) {
         payload: savedState.tasks,
       });
     }
-    if (savedState.theme && savedState.theme !== 'light') {
+    if (savedState.theme && savedState.theme !== "light") {
       dispatch({
         type: THEME_ACTIONS.SET_THEME,
         payload: savedState.theme,
@@ -56,7 +65,7 @@ export function AppProvider({ children }) {
     dispatch,
 
     // Project API
-    addProject: (name, description = '') => {
+    addProject: (name, description = "") => {
       dispatch({
         type: PROJECT_ACTIONS.ADD_PROJECT,
         payload: { name, description },
@@ -75,7 +84,7 @@ export function AppProvider({ children }) {
       const tasksToDelete = state.tasks
         .filter((task) => task.projectId === id)
         .map((task) => task.id);
-      
+
       dispatch({
         type: PROJECT_ACTIONS.DELETE_PROJECT,
         payload: { id },
@@ -89,11 +98,36 @@ export function AppProvider({ children }) {
       }
     },
 
+    clearAllProjects: () => {
+      dispatch({
+        type: PROJECT_ACTIONS.CLEAR_PROJECTS,
+      });
+      dispatch({
+        type: TASK_ACTIONS.CLEAR_TASKS,
+      });
+    },
+
     // Task API
-    addTask: (projectId, title, description = '', status = 'To Do', priority = 'Medium', tags = [], dueDate = null) => {
+    addTask: (
+      projectId,
+      title,
+      description = "",
+      status = "To Do",
+      priority = "Medium",
+      tags = [],
+      dueDate = null,
+    ) => {
       dispatch({
         type: TASK_ACTIONS.ADD_TASK,
-        payload: { projectId, title, description, status, priority, tags, dueDate },
+        payload: {
+          projectId,
+          title,
+          description,
+          status,
+          priority,
+          tags,
+          dueDate,
+        },
       });
     },
 
@@ -157,9 +191,5 @@ export function AppProvider({ children }) {
     canRedo: () => state.history.future.length > 0,
   };
 
-  return (
-    <AppContext.Provider value={value}>
-      {children}
-    </AppContext.Provider>
-  );
-};
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+}

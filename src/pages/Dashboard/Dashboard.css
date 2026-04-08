@@ -145,7 +145,11 @@
 
 /* Actions Section */
 .dashboard__actions {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
   padding: var(--spacing-lg);
 }
 

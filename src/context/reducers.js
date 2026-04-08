@@ -1,4 +1,9 @@
-import { PROJECT_ACTIONS, TASK_ACTIONS, THEME_ACTIONS, HISTORY_ACTIONS} from './constants';
+import {
+  PROJECT_ACTIONS,
+  TASK_ACTIONS,
+  THEME_ACTIONS,
+  HISTORY_ACTIONS,
+} from "./constants";
 
 // Project Reducer
 export function projectReducer(state = [], action) {
@@ -8,7 +13,7 @@ export function projectReducer(state = [], action) {
         id: Date.now().toString(),
         name: action.payload.name,
         createdAt: new Date().toISOString(),
-        description: action.payload.description || '',
+        description: action.payload.description || "",
       };
       return [...state, newProject];
     }
@@ -17,7 +22,7 @@ export function projectReducer(state = [], action) {
       return state.map((project) =>
         project.id === action.payload.id
           ? { ...project, ...action.payload.updates }
-          : project
+          : project,
       );
     }
 
@@ -29,10 +34,14 @@ export function projectReducer(state = [], action) {
       return action.payload;
     }
 
+    case PROJECT_ACTIONS.CLEAR_PROJECTS: {
+      return [];
+    }
+
     default:
       return state;
   }
-};
+}
 
 // Task Reducer
 export const taskReducer = (state = [], action) => {
@@ -42,9 +51,9 @@ export const taskReducer = (state = [], action) => {
         id: Date.now().toString(),
         projectId: action.payload.projectId,
         title: action.payload.title,
-        description: action.payload.description || '',
-        status: action.payload.status || 'To Do',
-        priority: action.payload.priority || 'Medium',
+        description: action.payload.description || "",
+        status: action.payload.status || "To Do",
+        priority: action.payload.priority || "Medium",
         tags: action.payload.tags || [],
         createdAt: new Date().toISOString(),
         dueDate: action.payload.dueDate || null,
@@ -56,7 +65,7 @@ export const taskReducer = (state = [], action) => {
       return state.map((task) =>
         task.id === action.payload.id
           ? { ...task, ...action.payload.updates }
-          : task
+          : task,
       );
     }
 
@@ -74,8 +83,12 @@ export const taskReducer = (state = [], action) => {
       return state.map((task) =>
         idsToUpdate.has(task.id)
           ? { ...task, ...action.payload.updates }
-          : task
+          : task,
       );
+    }
+
+    case TASK_ACTIONS.CLEAR_TASKS: {
+      return [];
     }
 
     case TASK_ACTIONS.SET_TASKS: {
@@ -88,16 +101,19 @@ export const taskReducer = (state = [], action) => {
 };
 
 // Theme Reducer
-export const themeReducer = (state = 'light', action) => {
+export const themeReducer = (state = "light", action) => {
   if (action.type === THEME_ACTIONS.SET_THEME) {
-      return action.payload;
+    return action.payload;
   } else {
-      return state;
+    return state;
   }
 };
 
 // History Reducer (for undo/redo)
-export const historyReducer = (state = { past: [], present: null, future: [] }, action) => {
+export const historyReducer = (
+  state = { past: [], present: null, future: [] },
+  action,
+) => {
   switch (action.type) {
     case HISTORY_ACTIONS.PUSH_HISTORY: {
       return {
