@@ -19,23 +19,6 @@
   margin: 0;
 }
 
-/* Statistics Cards */
-.dashboard__stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-2xl);
-}
-
-.stat-card {
-  background-color: var(--theme-bg-secondary);
-  border: 1px solid var(--theme-border);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  text-align: center;
-  transition: var(--transition);
-}
-
 .stat-card:hover {
   box-shadow: var(--shadow-md);
   border-color: var(--color-primary);

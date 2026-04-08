@@ -10,6 +10,7 @@ import useApp from "../../hooks/useApp";
 import useProjects from "../../hooks/useProjects";
 import Button from "../../components/Button/Button";
 import ConfirmDialog from "../../components/ConfirmDialog/ConfirmDialog";
+import DashboardStats from "../../components/DashboardStats/DashboardStats";
 import "./Dashboard.css";
 
 function Dashboard() {
@@ -30,37 +31,14 @@ function Dashboard() {
         <p className="dashboard__subtitle">Welcome to Smart Task Manager</p>
       </div>
 
-      <div className="dashboard__stats">
-        <div className="stat-card">
-          <div className="stat-card__number">{stats.totalProjects}</div>
-          <div className="stat-card__label">Projects</div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-card__number">{stats.totalTasks}</div>
-          <div className="stat-card__label">Total Tasks</div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-card__number">{stats.completedTasks}</div>
-          <div className="stat-card__label">Completed</div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-card__number">{stats.pendingTasks}</div>
-          <div className="stat-card__label">Pending</div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-card__number">{stats.highPriorityTasks}</div>
-          <div className="stat-card__label">High Priority</div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-card__number">{stats.overdueTasks}</div>
-          <div className="stat-card__label">Overdue</div>
-        </div>
-      </div>
+      <DashboardStats statList={[
+        { value: stats.totalProjects, label: "Projects" },
+        { value: stats.totalTasks, label: "Total Tasks" },
+        { value: stats.completedTasks, label: "Completed" },
+        { value: stats.pendingTasks, label: "Pending" },
+        { value: stats.highPriorityTasks, label: "High Priority" },
+        { value: stats.overdueTasks, label: "Overdue" }
+      ]}/>
 
       <div className="dashboard__progress">
         <h2>Completion Progress</h2>
