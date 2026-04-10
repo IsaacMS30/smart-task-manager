@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { createHashRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Dashboard from '../pages/Dashboard/Dashboard';
 import Projects from '../pages/Projects/Projects';
@@ -32,7 +32,7 @@ function RootLayout() {
 /**
  * Create the router configuration
  */
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <RootLayout />,
     children: [
